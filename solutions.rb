@@ -157,3 +157,36 @@ def countApplesAndOranges(s, t, a, b, apples, oranges)
     puts orange_count
 
 end
+
+# Complete the kangaroo function below.
+def kangaroo(x1, v1, x2, v2)
+    x1_behind = (x1 < x2)
+    # Check if kangaroos will never meet
+    if !x1_behind && (v1 >= v2)
+        print 'NO'
+        return 'NO'
+    end
+    if x1_behind && (v2 >= v1)
+        print 'NO'
+        return 'NO'
+    end
+
+    loop do
+        x1 += v1
+        x2 += v2
+        if x1 == x2
+            print 'YES'
+            return 'YES'
+        end
+        if x1_behind
+            if x1 > x2
+                print 'NO'
+                return 'NO'
+            end
+        elsif x2 > x1
+                print 'NO'
+                return 'NO'
+            end
+
+    end
+end
