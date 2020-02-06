@@ -207,3 +207,18 @@ def birthday(s, d, m)
 
     return count
 end
+
+# Complete the migratoryBirds function below.
+def migratoryBirds(arr)
+    sight = [0,0,0,0,0,0]
+
+    max = 0
+
+    arr.collect do |number|
+        sight[number] += 1
+        max = [max, sight[number]].max
+    end
+
+    p sight.find_index(max)
+
+end
