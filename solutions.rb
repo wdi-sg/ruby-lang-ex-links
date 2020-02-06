@@ -190,3 +190,20 @@ def kangaroo(x1, v1, x2, v2)
 
     end
 end
+
+# Complete the birthday function below.
+def birthday(s, d, m)
+    # s is array [1,2,3]
+    # d is day (total)
+    # m is month (number of squares)
+    len = s.length - (m - 1)
+    count = 0
+
+    for i in 0..len do
+        if s[i,m].sum == d
+            count += 1
+        end
+    end
+
+    return count
+end
