@@ -77,3 +77,58 @@ def staircase(n)
     end
 
 end
+
+# Complete the miniMaxSum function below.
+def miniMaxSum(arr)
+    minimum = arr.sum
+    maximum = 0
+    arr.collect do |number|
+        sum = arr.sum - number
+        minimum = [minimum, sum].min
+        maximum = [maximum, sum].max
+    end
+    puts minimum.to_s + " " + maximum.to_s
+end
+
+# Complete the birthdayCakeCandles function below.
+def birthdayCakeCandles(ar)
+    height = 0
+    count = 0
+    ar.collect do |number|
+        if number > height
+            count = 1
+            height = number
+        elsif number == height
+            count += 1
+        else
+        end
+    end
+    return count
+end
+
+#
+# Complete the timeConversion function below.
+#
+def timeConversion(s)
+    #
+    # Write your code here.
+    #
+    split = s.split(":")
+    pm = split[2][-2,2]
+    split[2] = split[2][0,2]
+    if pm == "AM" && split[0] == "12"
+        split[0] = 00
+    end
+    if pm == "PM"
+        split[0] = split[0].to_i + 12
+        if split[0] == 24
+            split[0] = 12
+        end
+    end
+
+    split[0] = split[0].to_s.rjust(2,"0")
+    split[1] = split[1].to_s.rjust(2,"0")
+    split[2] = split[2].to_s.rjust(2,"0")
+
+    p split.join(":")
+end
