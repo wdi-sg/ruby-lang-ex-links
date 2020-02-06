@@ -132,3 +132,28 @@ def timeConversion(s)
 
     p split.join(":")
 end
+
+# Complete the countApplesAndOranges function below.
+def countApplesAndOranges(s, t, a, b, apples, oranges)
+    # apple_tree = a
+    # orange_tree = b
+    # house = [s, t]
+    apple_count = 0
+    orange_count = 0
+
+    apples.collect do |distance|
+        if ((a + distance) >= s) && ((a + distance) <= t)
+            apple_count += 1
+        end
+    end
+
+    oranges.collect do |distance|
+        if ((b + distance) >= s) && ((b + distance) <= t)
+            orange_count += 1
+        end
+    end
+
+    puts apple_count
+    puts orange_count
+
+end
