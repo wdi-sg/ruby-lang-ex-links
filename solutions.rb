@@ -237,3 +237,20 @@ def bonAppetit(bill, k, b)
     end
 
 end
+
+# Complete the sockMerchant function below.
+def sockMerchant(n, ar)
+    count = {}
+    ar.collect do |colour|
+        if count[colour] == nil
+            count[colour] = 1
+        else
+            count[colour] += 1
+        end
+    end
+    total_pairs = 0
+    count.collect do |key, value|
+        total_pairs += (value / 2).floor
+    end
+    p total_pairs
+end
