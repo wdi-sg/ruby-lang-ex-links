@@ -222,3 +222,18 @@ def migratoryBirds(arr)
     p sight.find_index(max)
 
 end
+
+# Complete the bonAppetit function below.
+def bonAppetit(bill, k, b)
+    # bill: an array of integers representing the cost of each item ordered
+    # k: an integer representing the zero-based index of the item Anna doesn't eat
+    # b: the amount of money that Anna contributed to the bill
+    bill.delete_at(k)
+    split = (bill.sum) / 2.0
+    if (b == split)
+        print 'Bon Appetit'
+    else
+        print (b - split).to_i
+    end
+
+end
