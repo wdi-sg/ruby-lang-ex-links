@@ -1,0 +1,176 @@
+Solve Me First
+
+def solveMeFirst (a, b)
+    # Hint: Type return a+b below
+    return a+b
+end
+
+
+Simple Array Sum
+
+def simpleArraySum(ar)
+
+    sum = 0
+    ar.map do |num|
+    sum = sum + num
+    end
+
+    p sum
+end
+
+
+Compare Triplets
+
+def compareTriplets(a, b)
+    result = [0, 0]
+    a.map.with_index {|a_num, i| if a_num > b[i]
+    result[0] += 1
+    elsif a_num < b[i]
+    result[1] += 1
+    else
+    end
+    }
+    return result
+end
+
+
+A Very Big Sum
+
+def aVeryBigSum(ar)
+    sum = 0
+    ar.map {|num| sum = num + sum}
+
+    return sum
+
+end
+
+
+Diagonal Difference
+
+def diagonalDifference(arr)
+    # Write your code here
+    d1 = 0
+    d2 = 0
+    arr.map.with_index {|num, i|
+        d1 = arr[i][i] + d1
+    }
+    arr2 = arr.reverse
+    arr2.map.with_index {|num, i|
+        d2 = arr2[i][i] + d2
+    }
+    x = d1 - d2
+    return x.abs
+end
+
+
+Plus Minus
+
+def plusMinus(arr)
+
+    test1 = 0.0
+    test2 = 0.0
+    test3 = 0.0
+    arr.map {|num|
+        if num > 0
+        test1 += 1.0
+        elsif num < 0
+        test2 += 1.0
+        else
+        test3 += 1.0
+        end
+
+    }
+
+    p test1/arr.length
+    p test2/arr.length
+    p test3/arr.length
+
+
+end
+
+
+Staircase
+
+def staircase(n)
+
+    i = 0
+    while i < n
+        j = 0
+        printer = ''
+        for j in j..i do
+            printer.concat('#')
+        end
+        printer = printer.rjust(n)
+        puts printer
+        i += 1
+    end
+
+end
+
+
+MiniMax Sum
+
+def miniMaxSum(arr)
+
+    min_val = arr[0]
+    max_val = arr[0]
+    sum = 0
+    arr.map{|num|
+        sum = sum + num
+        if num > max_val
+        max_val = num
+        elsif num < min_val
+        min_val = num
+        end
+    }
+    result = [(sum-max_val), (sum-min_val)]
+    puts result[0].to_s + " " + result[1].to_s
+    return result
+end
+
+
+Birthday Cake Candles
+
+def birthdayCakeCandles(ar)
+    max_val = 0
+    count = 0
+    ar.map {|num|
+        if num > max_val
+        count = 1
+        max_val = num
+        elsif num == max_val
+        count += 1
+        else
+        end
+    }
+    return count
+end
+
+
+Time Conversion
+
+def timeConversion(s)
+    if s == "12:00:00AM"
+        p "00:00:00"
+        return "00:00:00"
+    elsif s == "12:00:00PM"
+        p "12:00:00"
+        return "12:00:00"
+    else
+        time_arr = s.upcase.split(":")
+        if time_arr[2].include? "PM"
+            time_arr[0]=time_arr[0].to_i + 12
+            time_sec = time_arr[2].split("PM")
+            time_string=time_arr[0].to_s.concat(":", time_arr[1], ":", time_sec[0])
+            p time_string
+            return time_string
+        else
+            time_sec = time_arr[2].split("AM")
+            time_string = time_arr[0].concat(":", time_arr[1], ":", time_sec[0])
+            p time_string
+            return time_string
+        end
+    end
+
+
+end
